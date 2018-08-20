@@ -1,0 +1,113 @@
+====================================
+******* Spectero CLI Cheat Sheet *******
+====================================
+
+tmux
+su daemonic
+cd /opt/spectero/daemon/latest/daemon; dotnet daemon.dll
+
+tmux
+su spectero
+cd /opt/spectero/latest/daemon
+../dotnet/dotnet daemon.dll
+
+
+=========
+Impersonate user invoice modification
+=========
+
+# Go into the Google chrome console and type in
+document.querySelector('.message').remove()
+
+=========
+Lock down SSH
+=========
+
+echo "sshd: ALL" >> /etc/hosts.deny
+echo "#paulvpn" >> /etc/hosts.allow
+echo "sshd: 128.199.254.70" >> /etc/hosts.allow
+echo "#robertvpn" >> /etc/hosts.allow
+echo "sshd: 23.158.64.64" >> /etc/hosts.allow
+echo "#internal-adm-0" >> /etc/hosts.allow
+echo "sshd: 23.155.192.254" >> /etc/hosts.allow
+echo "#deployhq" >> /etc/hosts.allow
+echo "sshd: 185.22.208.*" >> /etc/hosts.allow
+
+cd /root && mkdir .ssh
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSzpIpvGRUVB8ktFeF7m4QLd0DKso5MIMtKuIo8ugDaywyVhFv8+vRIeWc8ID/HglXCyX/bxGuSB6Ds6Z+nkPFfpul6/QdD2FN4VkLPCYLWstTZq0Dj12j0TlI3N5IEEE5zaiVf/NdJuWCftFQ5L0fxYUvUJk7BVEAJdyTQj8beJji5G5RxkMUApSV7WCX1vkJWsQg7P2E0f3oxM5kY/oR5TPhvNT0Y6DVfRI15yNE48FFLUTzPLwZS8VK/reOizI/8Cow/P0ponhnP4C5s18a7JAzPHwjHJL/wGwDwJNCj/4DVz2xJkN7ebEH/JdM3N6lWy/YRr8qOIaLkqo7yZRL robertero" >> /root/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuFbo9hloSi1ehhgW9TEJfSywwMUZpgp+RdVsyAAEqdrNa9IkSDkyxe1g4kmr4pgKE0GD2YUBg2BrM/0AQRzSjDhMUoiyJw3iV5A8e2mFLWja+KRFuwJlTtPYv4hRFAxB0Zvu2vJ9MXTsp2clgak1w4Wvv+v+mdLUshI2q+gYukWg7P5YNIbXmydwNW1SPxg/PKmqS0y/t8VDhlW/TdQhAY3On2UMjTPUf8qXTyPZJ8+6ER+lTVwft7aWiB6fJ6dhy2JdbKQysV4FRLgXE5ZyHGiIT49uLZuLEMx8zsvwCpIdtR7rRrL0psrBacEX0wQJK20gDrf2W/y1RfCqzp9sWQ== paulero" >> /root/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3pD2C4uTOTeBRo15b04EGWiSpNFa9pL1uXAnGTDURf0wo8VcxvlGlyg6Vl1f6SJs5R+pNaZbjVZZ74sWvmx7/sDABI0EHOO4dlP8bqAcRQsCE2+L3e4bYhNNo3UmjjFsGxg7IpVbWQ6TgUqV8zWuP6+03e1xRLaNFsrmYLAn2YKZCGzyYxr8RMJh2d6J8bhI1yRfL5O4qR0qnoIeSBTIa1ID6XT16xubXj8GuZPQJ3HqS7npV8VlvfcMJHgQhEfRrpEl5fpk9NqtnC00TqPMzwbdYWhm3PRR4xRMeGLtwid+AV2vSnNfhNWEqeQOqAYrp7QvGY+zG3nopniyEDG6n anatoliero" >> /root/.ssh/authorized_keys
+
+echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+
+
+======
+nano default editor
+======
+
+echo "export EDITOR="nano"" >> /etc/bashrc
+
+
+======
+PRO SERVER
+======
+
+##ON PRO SERVER
+apt update -y && apt upgrade -y
+curl -L https://bootstrap.saltstack.com | sudo sh
+rm -rf /etc/salt/minion_id && cat /etc/hostname >> /etc/salt/minion_id
+sed -i -e 's/#master: salt/master: hgjuvu9iohooxtbj1xqqnqzo.spectero.com/g' /etc/salt/minion
+service salt-minion restart
+
+
+##ON SALT MASTEWR
+salt-key -a vpn1.nrt1.spectero.com
+
+##ON PRO SERVER
+wget -O install.sh https://c.spectero.com/installers/spectero-unix-installer.sh && bash install.sh
+iptables -A OUTPUT -p tcp --dport 25 -j REJECT
+iptables -A OUTPUT -p tcp --dport 465 -j REJECT
+iptables -A OUTPUT -p tcp --dport 587 -j REJECT
+echo "iptables -A OUTPUT -p tcp --dport 25 -j REJECT" >> /etc/rc.local
+echo "iptables -A OUTPUT -p tcp --dport 465 -j REJECT" >> /etc/rc.local
+echo "iptables -A OUTPUT -p tcp --dport 587 -j REJECT" >> /etc/rc.local
+cat /opt/spectero/latest/daemon/.firstrun
+
+======
+SNMP
+======
+
+iptables -I INPUT -p udp -m udp --dport 161 -j ACCEPT
+iptables -I INPUT -p udp -m udp --dport 162 -j ACCEPT
+iptables-save > /etc/sysconfig/iptables
+apt-get install snmpd -y
+mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig
+wget -4 keimeg.com/scripts/distro
+mv distro /usr/bin/distro
+chmod 755 /usr/bin/distro
+nano /etc/snmp/snmpd.conf
+
+
+
+com2sec AllUser         default         RiZ6KLKKIRKLJ1DA
+group   AllGroup        v2c             AllUser
+view    AllView         included        .1
+access  AllGroup        ""	any     noauth  exact   AllView         none    none
+syslocation "2001 6th Ave Ste 300, Seattle, WA 98121, United States"
+
+extend .1.3.6.1.4.1.2021.7890.1 distro /usr/bin/distro
+
+
+
+service snmpd restart
+
+======
+systemd-resolved
+======
+
+echo "DNS=8.8.8.8" >> /etc/systemd/resolved.conf
+echo "FallbackDNS=8.8.4.4" >> /etc/systemd/resolved.conf
+echo "sudo sysctl -p" >> /etc/rc.local
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf

@@ -2,6 +2,10 @@
 ******* Spectero CLI Cheat Sheet *******
 ====================================
 
+=========
+Daemon management (related to our plb1/2/3)
+=========
+
 tmux
 su daemonic
 cd /opt/spectero/daemon/latest/daemon; dotnet daemon.dll

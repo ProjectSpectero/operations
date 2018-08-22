@@ -1,0 +1,4 @@
+#!/bin/sh
+curl -L https://bootstrap.saltstack.com | sudo sh
+sed -i -e 's/#master: salt/master: hgjuvu9iohooxtbj1xqqnqzo.spectero.com/g' /etc/salt/minion
+service salt-minion restart

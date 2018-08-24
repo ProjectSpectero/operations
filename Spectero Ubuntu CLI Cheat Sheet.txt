@@ -115,3 +115,66 @@ echo "sudo sysctl -p" >> /etc/rc.local
 echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+
+======
+GW IP
+======
+
+export gw=`ip r g 8.8.8.8 | awk '{print $3}'
+cat $gw
+
+======
+ShadowsocksR CentOS 7
+======
+
+yum update -y
+yum install iftop zip unzip htop iotop -y
+echo "export EDITOR="nano"" >> /etc/bashrc
+rm -rf /etc/resolv.conf && touch /etc/resolv.conf
+echo nameserver 8.8.8.8 > /etc/resolv.conf
+echo nameserver 8.8.4.4 > /etc/resolv.conf
+echo "PEERDNS=no" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+cd /root && wget https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh && sh shadowsocksR.sh
+
+## FIND GATEWAY BEFORE NEXT STEP
+ip r g 8.8.8.8
+
+chmod +x /etc/rc.local
+echo "ip a a 23.156.64.189/32 dev eth0" >> /etc/rc.local
+echo "ip r change default via 45.32.64.1 dev eth0 src 23.156.64.189" >> /etc/rc.local
+
+
+#PUT IN /etc/bird.conf
+router id 45.32.64.76;                                                                                              
+                                                                                                                    
+protocol kernel {                                                                                                   
+#       learn;                  # Learn all alien routes from the kernel                                            
+        persist;                # Don't remove routes on bird shutdown                                              
+        scan time 20;           # Scan kernel routing table every 20 seconds                                        
+#       import none;            # Default is import all                                                             
+        export all;             # Default is export none                                                            
+#       kernel table 5;         # Kernel table to synchronize with (default:main)                                   
+}                                                                                                                   
+                                                                                                                    
+protocol bgp vultr                                                                                                  
+{                                                                                                                   
+    local as 46292;                                                                                                 
+    source address 45.32.64.76;                                                                                     
+    import none;                                                                                                    
+    export all;                                                                                                     
+    graceful restart on;                                                                                            
+    multihop 2;                                                                                                     
+    neighbor 169.254.169.254 as 64515;                                                                              
+    password "frPLwiuwd8BjPZtGqwSO";                                                                                
+}                                                                                                                   
+                                                                                                                    
+protocol static                                                                                                     
+{                                                                                                                   
+route  23.156.64.0/24 via 45.32.64.76;
+route  23.156.64.189/32 via 45.32.64.76;
+}                                                                                                                   
+                                                                                                                    
+protocol device                                                                                                     
+{                                                                                                                   
+    scan time 5;                                                                                                    
+}  

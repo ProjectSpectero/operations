@@ -1,0 +1,1272 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-08-24T06:13:29.553Z",
+	"__export_source": "insomnia.desktop.app:v6.0.2",
+	"resources": [
+		{
+			"_id": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"created": 1513031708827,
+			"description": "",
+			"modified": 1513049196219,
+			"name": "Spectero Daemon",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_1a6d575410624576a003932ffa8fd639",
+			"color": null,
+			"created": 1513031708859,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1532497541763,
+			"modified": 1532497542313,
+			"name": "Root",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_69242fe796274ecda9940e623ff259b0",
+			"cookies": [],
+			"created": 1513031708862,
+			"modified": 1513031708862,
+			"name": "Default Jar",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"created": 1532497191139,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1532497191139,
+			"modified": 1532497191139,
+			"name": "Users",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"created": 1532497228965,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1532497228965,
+			"modified": 1532497228965,
+			"name": "Services",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"created": 1532497259994,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1532497259994,
+			"modified": 1532497259994,
+			"name": "Cloud",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_2c960fc0116147e1a23f29942bc2a13b",
+			"created": 1532497314557,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1532497244479.5,
+			"modified": 1532523731380,
+			"name": "Generic",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_f9e0ce852f5b45c9a7113d8b79a9687a",
+			"created": 1532582514423,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1532497252236.75,
+			"modified": 1532582560575,
+			"name": "Debug",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_745febf286584810841ccff8d5e04e19",
+			"created": 1533017366669,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1513031741994,
+			"modified": 1533019811241,
+			"name": "Demo",
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_b409f8e4717c4ae0af852e4b89944fe8",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"authKey\": \"{{ default_username  }}\",\n\t\"password\": \"{{ default_password  }}\"\n}\n"
+			},
+			"created": 1513031742044,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_de316d7dd271429dae13535cc727ed4a",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031741944,
+			"method": "POST",
+			"modified": 1535001559838,
+			"name": "Authenticate",
+			"parameters": [],
+			"parentId": "wrk_197bcc8102a741889a76b597ddf1b0a0",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/auth",
+			"_type": "request"
+		},
+		{
+			"_id": "env_d4f6477f19c344338cf72f4791eb12cc",
+			"color": null,
+			"created": 1513032458453,
+			"data": {
+				"api_version": "v1",
+				"base_url": "127.0.0.1:6024",
+				"default_node_key": "25e7e751047aad89f9fd7fa19fe806618ee9e944cbeb861398f8e4534498659a",
+				"default_password": "ZQQ7__5a_2f5WeOJ",
+				"default_username": "spectero",
+				"service_actions": [
+					"start",
+					"stop",
+					"restart",
+					"config"
+				],
+				"service_names": [
+					"HTTPProxy",
+					"OpenVPN",
+					"ShadowSOCKS",
+					"SSHTunnel"
+				]
+			},
+			"isPrivate": false,
+			"metaSortKey": 0,
+			"modified": 1534922228505,
+			"name": "Base",
+			"parentId": "env_1a6d575410624576a003932ffa8fd639",
+			"_type": "environment"
+		},
+		{
+			"_id": "env_fa9d95f65b184d6a937e66dc1697643c",
+			"color": null,
+			"created": 1513048863710,
+			"data": {
+				"api_version": "v1",
+				"base_url": "144.202.64.60:6024",
+				"default_node_key": "858e5acadd6141a0bf4a50e9c9b3c63cf93e1d67f346f06339ff7e7f28e78be7",
+				"default_password": "_Bv80f4--_oTG-_N",
+				"default_username": "spectero",
+				"service_actions": [
+					"start",
+					"stop",
+					"restart",
+					"config"
+				],
+				"service_names": [
+					"HTTPProxy",
+					"OpenVPN",
+					"ShadowSOCKS",
+					"SSHTunnel"
+				]
+			},
+			"isPrivate": false,
+			"metaSortKey": 1,
+			"modified": 1534922901972,
+			"name": "Hosted",
+			"parentId": "env_1a6d575410624576a003932ffa8fd639",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_c9362db9ff074d89b92b229a4eabd65d",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513032206003,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763992.0781,
+			"method": "GET",
+			"modified": 1534924362116,
+			"name": "List All Users",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dcef735222864c91a2bc0214c0d20cee",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513032515872,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763942.0781,
+			"method": "GET",
+			"modified": 1533771539452,
+			"name": "View One User (id -> 1)",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/2",
+			"_type": "request"
+		},
+		{
+			"_id": "req_abd44a1fa7534871bc7e6335ee2480ec",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": " {\n\t\t\t\"authKey\": \"thisIsARealUsername\",\n\t \t\t\"password\": \"wowAPasswordButIOnlySeeHunter2\",\n\t\t\t\"roles\": [\n\t\t\t\t\"HTTPProxy\"\n\t\t\t],\n\t\t\t\"fullName\": \"Unknown:#?@app\",\n\t\t\t\"emailAddress\": \"unallocated@spectero.com\",\n\t \t  \"encryptCertificate\": true\n }"
+			},
+			"created": 1513032638268,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763792.0781,
+			"method": "POST",
+			"modified": 1533594163222,
+			"name": "Create User",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8c30c773281e45e4b98a7e1bd7f03fff",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\t\"authKey\": \"SuchNewMuchWowTest\",\n\t\t\"fullName\": \"A New Challenger\",\n\t\t\"emailAddress\": \"myemail@spectero.com\",\n\t\t\"roles\": [\n\t\t\t\"WebApi\"\n\t\t],\n\t\t\"cert\": null,\n\t\t\"certKey\": null\n}"
+			},
+			"created": 1513032779662,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763842.0781,
+			"method": "PUT",
+			"modified": 1534925452678,
+			"name": "Edit User",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/{% response 'body', 'req_abd44a1fa7534871bc7e6335ee2480ec', '$.result.id' %}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_56e26c9923564a53bba8bff945e825b5",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513032841759,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031764042.0781,
+			"method": "DELETE",
+			"modified": 1533771528289,
+			"name": "Delete User",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/{% response 'body', 'req_abd44a1fa7534871bc7e6335ee2480ec', '$.result.id' %}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_68aff99f374c4da8a2e843cb07f070b7",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1514246057969,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031764142.0781,
+			"method": "GET",
+			"modified": 1533637920795,
+			"name": "Get All Svc Conn-resource (for User)",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/{% response 'body', 'req_c9362db9ff074d89b92b229a4eabd65d', '$.result[0].id' %}/service-resources",
+			"_type": "request"
+		},
+		{
+			"_id": "req_45828917bf73484c8014824d76bb8997",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1515719000670,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031764092.0781,
+			"method": "GET",
+			"modified": 1533594182281,
+			"name": "Get Svc Specific Conn-resource (for User)",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/{% response 'body', 'req_c9362db9ff074d89b92b229a4eabd65d', '$.result[0].id' %}/service-resources/{{ service_names[1] }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c9029b3dd9f04a5f97fb9f68295f71c1",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1515997893043,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763892.0781,
+			"method": "GET",
+			"modified": 1532574201508,
+			"name": "Get Currently Logged-in User",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/self",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c9a4abe530d144ec9a86d3f9c9ee81fa",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\t\t\"authKey\": \"spectero\",\n\t\t\"password\": \"C3eHlDD6bn4bVwT5FH7IBHgg\",\n \t\t\"emailAddress\": \"noc@spectero.com\",\n    \"roles\": [\n\t\t\t\"SuperAdmin\"\n\t\t]\n}"
+			},
+			"created": 1534924398391,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763817.0781,
+			"method": "PUT",
+			"modified": 1534925596841,
+			"name": "Edit User (Copy)",
+			"parameters": [],
+			"parentId": "fld_442e2cf24ede420aa0b5fea0f0958338",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_40a537e2f7884027bd73c0a337196bbf",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513032913421,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031743862.5898,
+			"method": "GET",
+			"modified": 1532677101639,
+			"name": "List Services and Status",
+			"parameters": [],
+			"parentId": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/service",
+			"_type": "request"
+		},
+		{
+			"_id": "req_fd0e937ec4db4081b325dc791f19716c",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513032971611,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031743881.3398,
+			"method": "GET",
+			"modified": 1534922918090,
+			"name": "View Service Config",
+			"parameters": [],
+			"parentId": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/service/{{ service_names[0] }}/{{ service_actions[3] }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a66ab9af39824f22b0ff2efb6497a95b",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": " {\n\t\t\"listeners\": [\n\t\t\t{\n\t\t\t\t\"item1\": \"0.0.0.0\",\n\t\t\t\t\"item2\": 10240\n\t\t\t}\n\t\t],\n\t\t\"allowedDomains\": null,\n\t\t\"bannedDomains\": null,\n\t\t\"proxyMode\": \"Normal\"\n }"
+			},
+			"created": 1513033136846,
+			"description": "```\n {\n\t\t\"listeners\": [\n\t\t\t{\n\t\t\t\t\"item1\": \"0.0.0.0\",\n\t\t\t\t\"item2\": 8800\n\t\t\t}\n\t\t],\n\t\t\"allowedDomains\": null,\n\t\t\"bannedDomains\": null,\n\t\t\"proxyMode\": \"Normal\"\n\t}\n```",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031743906.3398,
+			"method": "PUT",
+			"modified": 1534922285235,
+			"name": "Update Service Config (HTTPProxy)",
+			"parameters": [],
+			"parentId": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/service/{{ service_names[0]  }}/config",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f9c17b151b9e4cf48ed6dfa06fbd659c",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513034158742,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031743856.3398,
+			"method": "GET",
+			"modified": 1534369881396,
+			"name": "Manage Service(s)",
+			"parameters": [],
+			"parentId": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/service/{{ service_names[0] }}/{{ service_actions[2] }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_314f30cec6ba44309998d90b7a102000",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1515716863525,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031743868.8398,
+			"method": "GET",
+			"modified": 1534315938677,
+			"name": "List Eligible IP Addresses",
+			"parameters": [],
+			"parentId": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/service/ips",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8a211ce8c305420f835b3582623a012b",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"allowMultipleConnectionsFromSameClient\": false,\n\t\"clientToClient\": false,\n\t\"dhcpOptions\": [{ 'item1': 'WINS', 'item2': 'test' }],\n\t\"maxClients\": 1024,\n\t\"pushedNetworks\": [ \"100.1.2.0/24\" ],\n\t\"redirectGateway\": [\n\t\t\"Def1\"\n\t],\n\t\t\"listeners\": [\n\t\t\t{\n\t\t\t\t\"ipAddress\": \"0.0.0.0\",\n\t\t\t\t\"port\": 1194,\n\t\t\t\t\"protocol\": \"UDP\",\n\t\t\t\t\"managementPort\": 15101,\n\t\t\t\t\"network\": \"172.16.224.0/23\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"ipAddress\": \"0.0.0.0\",\n\t\t\t\t\"port\": 1194,\n\t\t\t\t\"protocol\": \"TCP\",\n\t\t\t\t\"managementPort\": 15101,\n\t\t\t\t\"network\": \"172.16.226.0/24\"\n\t\t\t}\n\t\t]\n}"
+			},
+			"created": 1529544464713,
+			"description": "```\n{\n\t\"allowMultipleConnectionsFromSameClient\": \"false\",\n\t\"clientToClient\": false,\n\t\"dhcpOptions\": [],\n\t\"maxClients\": 1024,\n\t\"pushedNetworks\": [ \"10.1.2.0/24\" ],\n\t\"redirectGateway\": [\n\t\t\"Def1\"\n\t],\n\t\t\"listeners\": [\n\t\t\t{\n\t\t\t\t\"ipAddress\": \"1.2.3.4\",\n\t\t\t\t\"port\": 1194,\n\t\t\t\t\"protocol\": \"TCP\",\n\t\t\t\t\"managementPort\": 15101,\n\t\t\t\t\"network\": \"172.16.224.0/24\"\n\t\t\t}\n\t\t]\n}\n```",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031743956.3398,
+			"method": "PUT",
+			"modified": 1534315921633,
+			"name": "Update Service Config (OpenVPN)",
+			"parameters": [],
+			"parentId": "fld_cbe08393c73c49f3adda6116a54eff28",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/service/{{ service_names[1] }}/config",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a96a246e8d504a4e86338cacda369f4d",
+			"authentication": {
+				"token": "",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1516680617383,
+			"description": "This endpoint is intended for consumption by the Spectero CLI from *LAN ONLY*. It blocks remote requests that are NOT authorized (WIP)",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499762.3281,
+			"method": "GET",
+			"modified": 1533019887218,
+			"name": "Get Cloud Connect Status (LAN)",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud",
+			"_type": "request"
+		},
+		{
+			"_id": "req_58653d396f9549db846b73cef0a1f00a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"nodeKey\": \"{{ default_node_key  }}\"\n}"
+			},
+			"created": 1516680655757,
+			"description": "This endpoint is intended for consumption by the Spectero CLI from *LAN ONLY*. It blocks remote requests.",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499612.3281,
+			"method": "POST",
+			"modified": 1533019310852,
+			"name": "Connect to Cloud",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/connect",
+			"_type": "request"
+		},
+		{
+			"_id": "req_380ef6f1c9f741978544ab4644b83e1f",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1518564720745,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499562.3281,
+			"method": "GET",
+			"modified": 1535091194785,
+			"name": "Get System Descriptor",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/descriptor",
+			"_type": "request"
+		},
+		{
+			"_id": "req_fe01ba225a1d4517b7805d30282113e6",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1519041553711,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499512.3281,
+			"method": "GET",
+			"modified": 1532497274822,
+			"name": "Get System Identity",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/identity",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f4ba0ffccba94e96916865d668cd1189",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1519041566043,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499462.3281,
+			"method": "GET",
+			"modified": 1532497266573,
+			"name": "Get System Status (Heartbeat)",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/heartbeat",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c071ad3892ec46269adef245d7718a3a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"force\": true,\n\t\"nodeId\": 20,\n\t\"nodeKey\": \"{{ default_node_key  }}\"\n}"
+			},
+			"created": 1522167856335,
+			"description": "This endpoint is intended for consumption by the Spectero CLI from *LAN ONLY*. It blocks remote requests.",
+			"headers": [
+				{
+					"id": "pair_21e1649de6d941d28b444932c65f748c",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499662.3281,
+			"method": "POST",
+			"modified": 1533019311619,
+			"name": "Manually Connect to Cloud",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/manual",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e0f6ec6425eb49b98ec283a7eb33019e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1522387503585,
+			"description": "This endpoint is intended for consumption by the Spectero CLI from *LAN ONLY*. It blocks remote requests.",
+			"headers": [
+				{
+					"id": "pair_21e1649de6d941d28b444932c65f748c",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499712.3281,
+			"method": "POST",
+			"modified": 1532497293302,
+			"name": "Disconnect From the Cloud",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/disconnect",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4fb16196962d495ea027fe3e3fd7e248",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1526371729349,
+			"description": "This endpoint is intended for consumption by the Spectero CLI from *LAN ONLY*. It blocks remote requests that are NOT authorized (WIP)",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513069499812.3281,
+			"method": "GET",
+			"modified": 1534232741192,
+			"name": "Get Cloud Connect Status (Remote)",
+			"parameters": [],
+			"parentId": "fld_806423f3d1094aacbc6c8c8c4f5a23fc",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/cloud/remote",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ad3e755685b94af891e9067c5244c0af",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1531382588124,
+			"description": "This endpoint is intended for consumption by the Spectero CLI from *LAN ONLY*. It blocks remote requests that are NOT authorized (WIP)",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513283936853.4648,
+			"method": "POST",
+			"modified": 1534369884586,
+			"name": "Shutdown / Restart App",
+			"parameters": [],
+			"parentId": "fld_2c960fc0116147e1a23f29942bc2a13b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/system/shutdown",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6424e8208263419c8f1a23a6da7d62fd",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1513297403936,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_4bb40e012bed455ca4b52ada17e899b8",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513283936903.4648,
+			"method": "GET",
+			"modified": 1532586424434,
+			"name": "Dynamic Debug - OK",
+			"parameters": [],
+			"parentId": "fld_f9e0ce852f5b45c9a7113d8b79a9687a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/debug/error",
+			"_type": "request"
+		},
+		{
+			"_id": "req_bfdf00073423445c8c13410f2a44b274",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1532582570664,
+			"description": "Signature is `v1/debug/errors/{ internal | disclosable | validation }`\n\nTests marshaling (and internal error handling) for the 3 types.",
+			"headers": [
+				{
+					"id": "pair_4bb40e012bed455ca4b52ada17e899b8",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513283936953.4648,
+			"method": "GET",
+			"modified": 1532935689154,
+			"name": "Dynamic Debug - Error",
+			"parameters": [],
+			"parentId": "fld_f9e0ce852f5b45c9a7113d8b79a9687a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/debug/errors/internal",
+			"_type": "request"
+		},
+		{
+			"_id": "req_da7bfe6962944a4ba9fd3aeb9da9d77e",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1532935690057,
+			"description": "Signature is `v1/debug/errors/{ \"\" | ips }`\n\nTests network and IP discovery.",
+			"headers": [
+				{
+					"id": "pair_4bb40e012bed455ca4b52ada17e899b8",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513283937003.4648,
+			"method": "GET",
+			"modified": 1532985898417,
+			"name": "Dynamic Debug - Networks",
+			"parameters": [],
+			"parentId": "fld_f9e0ce852f5b45c9a7113d8b79a9687a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/debug/network",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5c44e4657e4b4ef6a19279d2589ed7eb",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1532677144359,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763767.0781,
+			"method": "DELETE",
+			"modified": 1533019867794,
+			"name": "Delete User (Copy)",
+			"parameters": [],
+			"parentId": "fld_745febf286584810841ccff8d5e04e19",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/2",
+			"_type": "request"
+		},
+		{
+			"_id": "req_55cefb012a0441608b848d2364803312",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": " {\n\t\t\t\"authKey\": \"thisIsARealUsername\",\n\t \t\t\"password\": \"wowAPasswordButIOnlySeeHunter2\",\n\t\t\t\"roles\": [\n\t\t\t\t\"HTTPProxy\"\n\t\t\t],\n\t\t\t\"fullName\": \"Unknown:#?@app\",\n\t\t\t\"emailAddress\": \"unallocated@spectero.com\",\n\t \t  \"encryptCertificate\": true\n }"
+			},
+			"created": 1533017273679,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763792.0781,
+			"method": "POST",
+			"modified": 1533019823255,
+			"name": "Create User (Copy)",
+			"parameters": [],
+			"parentId": "fld_745febf286584810841ccff8d5e04e19",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user",
+			"_type": "request"
+		},
+		{
+			"_id": "req_33351ea8026940d2bb1088da1bd09e61",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1533017287217,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763692.0781,
+			"method": "GET",
+			"modified": 1535001559409,
+			"name": "Get Svc Specific Conn-resource (for User) (Copy)",
+			"parameters": [],
+			"parentId": "fld_745febf286584810841ccff8d5e04e19",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/2/service-resources/{{ service_names[0] }}",
+			"_type": "request"
+		},
+		{
+			"_id": "req_7264abfd05c644fab61de0e3931e304b",
+			"authentication": {
+				"token": "{% response 'body', 'req_b409f8e4717c4ae0af852e4b89944fe8', '$.result.access.token' %}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": ""
+			},
+			"created": 1533017356555,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7b4c2948167e47559d4356a35cad474d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1513031763742.0781,
+			"method": "GET",
+			"modified": 1533017463781,
+			"name": "Get All Svc Conn-resource (for User) (Copy)",
+			"parameters": [],
+			"parentId": "fld_745febf286584810841ccff8d5e04e19",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/{{ api_version  }}/user/2/service-resources",
+			"_type": "request"
+		}
+	]
+}
